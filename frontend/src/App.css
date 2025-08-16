@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f2f7 0%, #d1e7f0 100%);
+  min-height: 100vh;
+  color: #2d3748;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; ;
+}
+
+.app {
+
+  
+  max-width: 800px; /* Increased max-width for a slightly wider layout */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh;
+}
+
+.app-header {
+  text-align: center;
+  color: #335856;
+  margin-bottom: 2.5rem; /* Slightly reduced margin */
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.app-header p {
+  font-size: 1.125rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem; /* Increased gap between cards */
+  width: 100%;
+  align-items: center;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Added ease-in-out */
+  width: 100%;
+  max-width: 650px; /* Increased max-width for cards */
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.card h2 {
+  font-size: 1.5rem; /* Slightly larger font size */
+  font-weight: 700; /* Bolder font weight */
+  color: #2d3748;
+  margin-bottom: 1.5rem; /* Increased margin-bottom */
+  padding-bottom: 0.875rem; /* Increased padding-bottom */
+  border-bottom: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+input[type="text"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 1rem 1.125rem; /* Increased padding */
+  border: 1px solid #cbd5e0; /* Thinner border */
+  border-radius: 12px; /* Slightly larger border-radius */
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease-in-out; /* Added ease-in-out */
+  background: #ffffff; /* White background */
+  color: #2d3748;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2); /* Increased shadow on focus */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.file-input {
+  cursor: pointer;
+  padding: 1.25rem; /* Increased padding */
+  border: 2px dashed #a0aec0; /* Darker dashed border */
+  background: #f8f9fa;
+  text-align: center;
+  transition: all 0.2s ease-in-out; /* Added ease-in-out */
+  color: #4a5568;
+  border-radius: 12px; /* Match input border-radius */
+}
+
+.file-input:hover {
+  border-color: #667eea;
+  background: #f0f4f8;
+}
+
+.file-name {
+  margin-top: 1rem; /* Increased margin-top */
+  padding: 0.6rem 1.2rem; /* Increased padding */
+  background: #e0e7ff; /* Lighter blue background */
+  border-radius: 10px; /* Slightly larger border-radius */
+  color: #3182ce; /* Darker blue text */
+  font-size: 0.9rem; /* Slightly larger font size */
+  font-weight: 600; /* Bolder font weight */
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+button {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 1.25rem;
+  margin-right: 0.75rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 140px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.primary-btn {
+  background: #4299e1;
+  color: white;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+  background: #3182ce;
+}
+
+.secondary-btn {
+  background: #edf2f7;
+  color: #4a5568;
+  border: 1px solid #cbd5e0; /* Added a subtle border */
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: #d6e0ed; /* Darker background on hover */
+  border-color: #a0aec0; /* Darker border on hover */
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem; /* Increased margin-bottom */
+  flex-wrap: wrap;
+  gap: 1.25rem; /* Increased gap */
+}
+
+.summary-header h2 {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+  flex: 1;
+  text-align: left;
+  font-size: 1.5rem; /* Match card h2 font size */
+}
+
+.summary-header button {
+  margin: 0;
+  min-width: 120px;
+}
+
+.summary-display {
+  background: #f7fafc;
+  border-left: 5px solid #4299e1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #2d3748;
+}
+
+.summary-display p {
+  margin-bottom: 0.75rem;
+}
+
+.summary-display p:last-child {
+  margin-bottom: 0;
+}
+
+.summary-textarea {
+  min-height: 220px; /* Increased min-height */
+  font-size: 1rem; /* Slightly larger font size */
+  line-height: 1.7; /* Adjusted line height */
+}
+
+.email-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Increased gap */
+}
+
+.email-section input {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem 0.75rem; /* Adjusted padding for smaller screens */
+  }
+  
+  .card {
+    padding: 1.75rem; /* Adjusted padding for smaller screens */
+  }
+  
+  .app-header h1 {
+    font-size: 2.25rem; /* Adjusted font size for smaller screens */
+  }
+  
+  button {
+    width: 100%;
+    margin-right: 0;
+    min-width: unset; /* Remove min-width on small screens */
+  }
+  
+  .summary-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+}
