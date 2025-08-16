@@ -10,6 +10,23 @@ An intelligent meeting notes application that transforms lengthy transcripts int
 
 ---
 
+## 📸 Feature Showcase
+
+<div align="center">
+
+### Upload & Process Transcripts
+![Upload Interface](./images/image1.png)
+
+### AI-Powered Summarization
+![Summary Generation](./images/image2.png)
+
+### Professional Email Sharing
+![Email Integration](./images/image3.png)
+
+</div>
+
+---
+
 ## Features
 
 ### Smart Transcript Processing
@@ -105,26 +122,29 @@ SMTP_PORT=587
 
 ### Basic Workflow
 
-1. **Upload or Paste Transcript**
+#### 1. **Upload or Paste Transcript**
    - Click "Choose File" to upload a `.txt` file
    - Or paste your transcript in the text area
 
-2. **Customize Summary Style**
+![Upload Section](./images/image1.png)
+
+#### 2. **Customize Summary Style & Generate**
    - Use preset prompts or create custom ones:
      - "Summarize in bullet points for executives"
      - "Extract only action items"
      - "Key updates and risks"
      - "Brief summary with decisions"
-
-3. **Generate and Edit**
    - Click "Generate Summary" to process
    - Edit the generated summary if needed
-   - Save your changes
 
-4. **Share via Email**
+![Generate Summary](./images/image2.png)
+
+#### 3. **Share via Email**
    - Enter recipient emails (comma-separated)
    - Customize the email subject
    - Click "Send Email" to share
+
+![Email Section](./images/image3.png)
 
 ### Advanced Features
 
