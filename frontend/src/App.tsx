@@ -185,7 +185,7 @@ function App() {
                 type="text"
                 value={recipients}
                 onChange={(e) => setRecipients(e.target.value)}
-                placeholder="john@company.com, sarah@company.com"
+                placeholder="aman@company.com, mehul@company.com"
               />
             </div>
             <button
