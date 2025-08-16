@@ -13,21 +13,15 @@ load_dotenv()
 
 app = FastAPI(title="Meeting Notes Summarizer API")
 
-# Configure CORS
-origins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
-    "https://meeting-notes-summarizer-lime.vercel.app",
-    "https://*.vercel.app",  # Allow any Vercel deployment
-    "*"  # Allow all origins (for testing)
-]
-
+# Configure CORS - simplified for production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,
 )
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
@@ -149,4 +143,5 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
