@@ -25,7 +25,7 @@ function App() {
     formData.append('file', uploadedFile)
 
     try {
-      const response = await fetch('http://localhost:8000/api/upload-transcript', {
+      const response = await fetch('https://meeting-notes-summarizer.onrender.com/api/upload-transcript', {
         method: 'POST',
         body: formData
       })
@@ -42,7 +42,7 @@ function App() {
     if (!transcript.trim()) return
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:8000/api/summarize', {
+      const response = await fetch('https://meeting-notes-summarizer.onrender.com/api/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: transcript, prompt })
@@ -74,7 +74,7 @@ function App() {
     if (!summaryData || !recipients.trim()) return
     const recipientList = recipients.split(',').map(email => email.trim())
     try {
-      const response = await fetch('http://localhost:8000/api/send-email', {
+      const response = await fetch('https://meeting-notes-summarizer.onrender.com/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
