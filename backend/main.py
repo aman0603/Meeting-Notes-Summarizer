@@ -13,9 +13,18 @@ load_dotenv()
 
 app = FastAPI(title="Meeting Notes Summarizer API")
 
+# Configure CORS
+origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://meeting-notes-summarizer-lime.vercel.app",
+    "https://*.vercel.app",  # Allow any Vercel deployment
+    "*"  # Allow all origins (for testing)
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for deployment
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
